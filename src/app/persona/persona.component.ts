@@ -86,4 +86,12 @@ export class PersonaComponent {
   guardarEnLocalStorage() {
     localStorage.setItem('personasBasico', JSON.stringify(this.personas));
   }
+
+  eliminar(indice: number) {
+  if (confirm('¿Eliminar esta persona?')) {
+    this.personas.splice(indice, 1);
+    this.guardarEnLocalStorage();
+    this.limpiar();
+  }
+  }
 }
